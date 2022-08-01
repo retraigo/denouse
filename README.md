@@ -1,2 +1,2 @@
 # denouse
-Use composables for Deno
+Util functions for TypeScript.
