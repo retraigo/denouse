@@ -11,6 +11,6 @@ const lr = useLinearRegression(x, y)
 console.log(lr, lr.predict(6))
 */
 
-import { useLinearBezier } from "./mod.ts";
+import { useLinearBezier, useEvenlyDistribute } from "./mod.ts";
 
-console.log(useLinearBezier(30))
+console.log(useEvenlyDistribute(30))
