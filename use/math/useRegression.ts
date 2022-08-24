@@ -28,11 +28,11 @@ export function useLinearRegression(x: number[], y: number[]): LinearRegression 
     const intercept = mean[1] - slope * mean[0];
     const predict = (x: number) => intercept + (slope * x)
 
-    let sse = 0, sst = 0;
+    let ssr = 0, sst = 0;
 
     i = 0;
     while(i < n) {
-        sse += Math.pow(y[i] - predict(x[i]), 2)
+        ssr += Math.pow(predict(x[i]) - mean[1], 2)
         sst += Math.pow(y[i] - mean[1], 2)
         ++i;
     }
@@ -40,7 +40,7 @@ export function useLinearRegression(x: number[], y: number[]): LinearRegression 
         slope: slope,
         intercept: intercept,
         predict,
-        r2: 1 - sse/sst
+        r2: ssr/sst
     }
 
 
