@@ -1,2 +1,2 @@
 # denouse
-Util functions for TypeScript.
+A collection of (mostly) number-related utility functions for TypeScript.
