@@ -1,3 +1,4 @@
+/*
 import {useLinearRegression, useGaussianArray} from "./mod.ts"
 
 
@@ -8,3 +9,8 @@ const y = useGaussianArray(20000000, 10, 2)
 const lr = useLinearRegression(x, y)
 
 console.log(lr, lr.predict(6))
+*/
+
+import { useLinearBezier } from "./mod.ts";
+
+console.log(useLinearBezier(30))
