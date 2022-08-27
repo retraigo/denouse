@@ -37,11 +37,12 @@ export function useGaussian(
  * @param variance Variance of the distribution σ^2.
  * @returns A Gaussian distribution.
  */
-export function useGaussianArray(num: number, mean: number, variance: number) {
-  const result = [];
+
+export function useGaussianArray(num: number, mean: number, variance: number): Float32Array {
+  const result = new Float32Array(num);
   let i = 0;
   while (i < num) {
-    result.push(useGaussian(mean, variance)[0]);
+    result[i] = useGaussian(mean, variance)[0];
     ++i;
   }
   return result;

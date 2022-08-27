@@ -1,4 +1,4 @@
-import { useEvenlyDistribute } from "./useDistribute.ts";
+import { useEvenlyDistribute } from "../distributions/useDistribute.ts";
 
 // TODO: ALLOW CUSTOM POINTS
 // const POINT_0 = [0, 0], POINT_3 = [1, 1];
@@ -17,7 +17,7 @@ import { useEvenlyDistribute } from "./useDistribute.ts";
  * @returns Array of num_points points of the linear bezier curve (more like line).
  */
 export function useLinearBezier(num_points: number): [number, number][] {
-  return useEvenlyDistribute(num_points).map((t) => [t, t]);
+  return Array.from(useEvenlyDistribute(num_points)).map((t) => [t, t]);
 }
 
 /**

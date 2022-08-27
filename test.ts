@@ -1,16 +1,25 @@
-/*
-import {useLinearRegression, useGaussianArray} from "./mod.ts"
+import * as matrix from "./use/math/matrix/matrix.ts";
+
+//Deno.bench("noop", () => {})
+
+//Deno.bench("norm", () => {useGaussianArray(100000, 10, 0.23)})
+
+//Deno.bench("fl", () => {useGaussianArray1(100000, 10, 0.23)})
+
+console.log(
+  matrix.combineMatrixByMax(
+    [[2, 2], [3, 4]],
+    [[2, 5, 6], [2, 3, 0], [1, 9, 2]],
+    [[1], [5], [9]],
+  ),
+);
 
 
-const x = useGaussianArray(20000000, 5, 1)
-const y = useGaussianArray(20000000, 10, 2)
-//const y = x.map(n => n * 2)
-
-const lr = useLinearRegression(x, y)
-
-console.log(lr, lr.predict(6))
-*/
-
-import { useLinearBezier, useEvenlyDistribute } from "./mod.ts";
-
-console.log(useEvenlyDistribute(30))
+console.log(
+    matrix.combineMatrixByMin(
+      [[2, 2], [3, 4]],
+      [[2, 5, 6], [2, 3, 0], [1, 9, 2]],
+      [[1], [5], [9]],
+    ),
+  );
+  
