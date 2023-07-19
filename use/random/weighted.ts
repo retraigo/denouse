@@ -1,3 +1,5 @@
+// Check out https://github.com/retraigo/fortuna
+
 export interface WeightedChoice<ItemType> {
   result: ItemType;
   chance: number;
@@ -10,7 +12,7 @@ export interface WeightedChoice<ItemType> {
  * @returns {WeightedChoice} Item rolled.
  */
 
-export function useGacha<ItemType>(
+export function useWeighted<ItemType>(
   choices: WeightedChoice<ItemType>[],
 ): WeightedChoice<ItemType> {
   const total = choices.reduce(

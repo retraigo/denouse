@@ -1,11 +1,14 @@
-import * as matrix from "./use/math/matrix/matrix.ts";
+import { useRange, useSeries } from "./use/array/range.ts";
+import { useUnique } from "./use/array/unique.ts";
+import { useShuffle } from "./use/random/shuffle.ts";
 
-//Deno.bench("noop", () => {})
+Deno.bench("noop", () => {})
 
-//Deno.bench("norm", () => {useGaussianArray(100000, 10, 0.23)})
+Deno.bench("fl", () => {useUnique(useSeries(1000))})
 
-//Deno.bench("fl", () => {useGaussianArray1(100000, 10, 0.23)})
+console.log(useRange(15))
 
+/*
 console.log(
   matrix.combineMatrixByMax(
     [[2, 2], [3, 4]],
@@ -22,4 +25,4 @@ console.log(
       [[1], [5], [9]],
     ),
   );
-  
+  */

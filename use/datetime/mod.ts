@@ -1,2 +1,2 @@
-export { useTime } from "./useTime.ts"
-export { useDuration } from "./useDuration.ts"
+export { useTime } from "./time.ts"
+export { useDuration } from "./duration.ts"

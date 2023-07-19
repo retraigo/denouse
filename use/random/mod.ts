@@ -1,4 +1,5 @@
-export { useGacha } from "./useGacha.ts";
-export { useRearrange } from "./useRearrange.ts";
-export { useRNG } from "./useRNG.ts";
-export { useGaussian, useGaussianArray } from "./useGaussian.ts"
+export { useNormal, useNormalArray } from "./normal.ts";
+export { useRearrange } from "./rearrange.ts";
+export { useRNG } from "./rng.ts";
+export { useShuffle } from "./shuffle.ts";
+export { useWeighted } from "./weighted.ts";
