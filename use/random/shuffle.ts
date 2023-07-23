@@ -1,7 +1,13 @@
 import { useSeries } from "../array/range.ts";
 
+/**
+ * Shuffle a given array in-place.
+ * @param arr Array to shuffle
+ */
 export function useShuffle<T>(arr: T[]): T[];
+/** Get a shuffled array of numbers from 0 to the given number */
 export function useShuffle(max: number): number[];
+/** Get a shuffled array of numbers between the given range */
 export function useShuffle(min: number, max: number): number[];
 export function useShuffle<T>(
   maybeArr: number | T[],

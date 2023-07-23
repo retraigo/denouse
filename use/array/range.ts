@@ -18,9 +18,9 @@ export function useRange(n: number, min = 0, max = 1): number[] {
 /**
  * Get an array of numbers between a given range,
  * incremented by a step.
- * @param min
- * @param max
- * @param step
+ * @param min Lower limit of range (inclusive).
+ * @param max Upper limit of range (exclusive).
+ * @param step step to increment by
  * @returns Array of numbers
  */
 export function useSeries(max: number): number[];
