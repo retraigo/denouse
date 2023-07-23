@@ -6,7 +6,7 @@ Deno.bench("noop", () => {})
 
 Deno.bench("fl", () => {useUnique(useSeries(1000))})
 
-console.log(useRange(15))
+console.log(useUnique([1, 2, 3, 3, 2, 4]))
 
 /*
 console.log(
