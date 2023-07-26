@@ -20,7 +20,7 @@ export function useSplit(
   const { ratio, shuffle } = options;
   const idx = Math.floor(arr[0].length * (ratio[0] / (ratio[0] + ratio[1])));
   if (!shuffle) {
-    return [arr.map((x) => x.slice(0, idx)), arr.map((x) => x.slice(idx))];
+    return [arr.map((x) => x.slice<typeof x>(0, idx)), arr.map((x) => x.slice<typeof x>(idx))];
   } else {
     const shuffled = useShuffle(0, arr[0].length);
     const x1 = shuffled.slice(0, idx);
