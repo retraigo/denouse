@@ -13,7 +13,7 @@ interface SplitOptions {
 export function useSplit(
   options: SplitOptions = { ratio: [7, 3], shuffle: false },
   ...arr: (ArrayLike<unknown> & Sliceable)[]
-): [(ArrayLike<unknown> & Sliceable)[], (ArrayLike<unknown> & Sliceable)[]] {
+): [typeof arr, typeof arr] {
   if (!arr.every((x) => x.length === arr[0].length)) {
     throw new Error("All arrays must have equal length!");
   }
@@ -26,12 +26,12 @@ export function useSplit(
     const x1 = shuffled.slice(0, idx);
     const x2 = shuffled.slice(idx);
     return [
-      arr.map<ArrayLike<unknown>>((x) =>
+      arr.map((x) =>
         x1.map((i) => x[i])
-      ) as (ArrayLike<unknown> & Sliceable)[],
-      arr.map<ArrayLike<unknown>>((x) =>
+      ) as typeof arr,
+      arr.map((x) =>
         x2.map((i) => x[i])
-      ) as (ArrayLike<unknown> & Sliceable)[],
+      ) as typeof arr,
     ];
   }
 }
