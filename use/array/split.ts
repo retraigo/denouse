@@ -1,7 +1,7 @@
 import { useShuffle } from "../random/shuffle.ts";
 
 export interface Sliceable<T> {
-  filter<S extends T>(
+  filter(
     predicate: (value: T, index: number) => boolean,
   ): Sliceable<T>;
   slice(start?: number, end?: number): Sliceable<T>;
