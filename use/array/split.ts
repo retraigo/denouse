@@ -6,7 +6,6 @@ export interface Sliceable<T> {
   ): Sliceable<T>;
   slice(start?: number, end?: number): Sliceable<T>;
   length: number;
-  at(pos: number): Sliceable<T>;
 }
 
 interface SplitOptions {
