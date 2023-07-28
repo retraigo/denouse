@@ -1,8 +1,8 @@
 import { useShuffle } from "../random/shuffle.ts";
 
 export interface Sliceable<T> {
-  filter<S extends T>(
-    predicate: (value: T, index: number, array: T[]) => value is S,
+  filter<T>(
+    predicate: (value: T, index: number, array: T[]) => value is T,
   ): Sliceable<T>;
   slice(start?: number, end?: number): Sliceable<T>;
   length: number;
@@ -34,21 +34,21 @@ export function useSplit(
     const x2 = shuffled.slice(idx);
     return [
       arr.map((x) =>
-        x.filter(
+        x.filter<typeof x>(
           ((_, i, __) => x1.includes(i)) as (
             value: unknown,
             index: number,
             array: unknown[],
-          ) => value is unknown,
+          ) => value is typeof x,
         )
       ) as typeof arr,
       arr.map((x) =>
-        x.filter(
+        x.filter<typeof x>(
           ((_, i, __) => x2.includes(i)) as (
             value: unknown,
             index: number,
             array: unknown[],
-          ) => value is unknown,
+          ) => value is typeof x,
         )
       ) as typeof arr,
     ];
